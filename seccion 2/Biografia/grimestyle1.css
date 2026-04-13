@@ -1,0 +1,35 @@
+body {
+  background-image: url(fotos_grimes/backround.gif);
+ background-position: center;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.text1{
+  width: 400px;
+  height: 300px;
+  background-color: rgb(48, 48, 48);
+  margin-left: 22%;
+  
+}
+
+.text2{
+  margin-left: 22%;
+}
+.cuadrado{
+  margin-left: 22%;
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+}
+.inicio {
+  margin-left: 10%;
+color:#ffffff
+  
+}
+
+.fotogrima{
+border-style: solid;
+border-radius: 30%;
+}
