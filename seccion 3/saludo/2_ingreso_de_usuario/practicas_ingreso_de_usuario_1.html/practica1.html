@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ingreso de texto 1</title>
+</head>
+<body>
+    <p>Ingrese un texto</p>
+    <input type="text" id="InputTexto">
+    <button onclick="mostrarTexto()">Mostrar Texto</button>
+
+    <script>
+        function mostrarTexto() {
+            let texto = document.getElementById("InputTexto")
+            alert("Su texto es " + (texto.value) )
+        }
+    </script>
+</body>
+</html>
