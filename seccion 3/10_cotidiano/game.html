@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Quiz</title>
+</head>
+<body onload="iniciarContador()">
+
+    <h1>Responde rápido <span id="contador">30</span></h1>
+   
+    <div>
+        <h2>1. ¿En qué año nació Grimes?</h2>
+        <input type="text" id="p1">
+    </div>
+
+    <div>
+        <h2>2. ¿Cuál es el nombre real de Grimes?</h2>
+        <input type="text" id="p2">
+    </div>
+
+    <div>
+        <h2>3. ¿Cuándo se lanzó su primer álbum?</h2>
+        <input type="text" id="p3">
+    </div>
+  
+    <div>
+        <h2>4. ¿Cuál es su canción con más vistas?</h2>
+        <input type="text" id="p4">
+    </div>
+   
+    <div>
+        <h2>5. ¿Cuántos hijos tiene Grimes?</h2>
+        <input type="text" id="p5">
+    </div>
+
+    <br><br>
+    <button onclick="revisarRespuestas()">Enviar</button>
+    <button onclick="reiniciarContador()">Reintentar</button>
+
+     <script>
+        let tiempo = 30; 
+        let intervalo; 
+
+        function actualizarContador() {
+            document.getElementById("contador").textContent = tiempo;
+        }
+
+        function contar() {
+            if (tiempo > 0) {
+                tiempo--; 
+                console.log(tiempo);
+                actualizarContador(); 
+            } else {
+                detenerContador(); 
+                alert("Game Over, try again"); 
+                revisarRespuestas();
+            }
+        }
+
+        function iniciarContador() {
+            if (!intervalo) { 
+                intervalo = setInterval(contar, 1000); 
+            }
+        }
+
+        function detenerContador() {
+            clearInterval(intervalo); 
+            intervalo = null; 
+        }
+
+        function revisarRespuestas() {
+            detenerContador();
+            let fecha = new Date().toLocaleDateString('es-ES');
+
+            let r1 = document.getElementById("p1").value;
+            let r2 = document.getElementById("p2").value;
+            let r3 = document.getElementById("p3").value;
+            let r4 = document.getElementById("p4").value;
+            let r5 = document.getElementById("p5").value;
+            alert("Fecha: " + fecha + "\n1. " + r1 + "\n2. " + r2 + "\n3. " + r3 + "\n4. " + r4 + "\n5. " + r5);
+        }
+
+        function reiniciarContador() {
+            detenerContador(); 
+            tiempo = 30; 
+            actualizarContador(); 
+        
+            document.getElementById("p1").value = "";
+            document.getElementById("p2").value = "";
+            document.getElementById("p3").value = "";
+            document.getElementById("p4").value = "";
+            document.getElementById("p5").value = "";
+
+            iniciarContador(); 
+        }
+     </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+h1{
+    font-family:sans-serif, Courier, monospace;
+    color:#58162A;   
+
+}
+
+body {
+    background-color: #D07597; 
+}
+.encabezado-contenedor {
+    display: flex;         
+    align-items: center;   
+    gap: 15px;           
+}
+
+#contador {
+    font-size: 2rem;       
+    font-weight: bold;     
+}
+#contador {
+    border: 2px solid #58162A;      
+    padding: 2px 8px;            
+    border-radius: 4px;           
+    margin-left: 10px;           
+}
+input[type="text"] {
+    display: block;       
+    margin-top: 8px;     
+    margin-bottom: 20px;  
+    width: 280px;        
+    padding: 8px;         
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+h2{
+    font-family:sans-serif, Courier, monospace;
+    color:#58162A;   
+
+}
+button{
+    display: block;       
+    margin-top: 8px;     
+    margin-bottom: 20px;  
+    width: 180px;        
+    padding: 25px;         
+    border: 1px solid #310c17;
+    background-color: #a14e6c;
+    border-radius: 4px;
+}
