@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Quiz</title>
 </head>
+
 <body onload="iniciarContador()">
 
     <h1>Responde rápido <span id="contador">30</span></h1>
-   
+
     <div>
         <h2>1. ¿En qué año nació Grimes?</h2>
         <input type="text" id="p1">
@@ -24,12 +26,12 @@
         <h2>3. ¿Cuándo se lanzó su primer álbum?</h2>
         <input type="text" id="p3">
     </div>
-  
+
     <div>
         <h2>4. ¿Cuál es su canción con más vistas?</h2>
         <input type="text" id="p4">
     </div>
-   
+
     <div>
         <h2>5. ¿Cuántos hijos tiene Grimes?</h2>
         <input type="text" id="p5">
@@ -39,9 +41,13 @@
     <button onclick="revisarRespuestas()">Enviar</button>
     <button onclick="reiniciarContador()">Reintentar</button>
 
-     <script>
-        let tiempo = 30; 
-        let intervalo; 
+    <audio id="AudioGrimes">
+        <source src="audio/oblivion.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        let tiempo = 30;
+        let intervalo;
 
         function actualizarContador() {
             document.getElementById("contador").textContent = tiempo;
@@ -49,25 +55,28 @@
 
         function contar() {
             if (tiempo > 0) {
-                tiempo--; 
+                tiempo--;
                 console.log(tiempo);
-                actualizarContador(); 
+                actualizarContador();
             } else {
-                detenerContador(); 
-                alert("Game Over, try again"); 
-                revisarRespuestas();
+                detenerContador();
+                document.getElementById("AudioGrimes").play();
+                setTimeout(function () {
+                    alert("Game Over, try again");
+                    revisarRespuestas();
+                }, 100);
             }
         }
 
         function iniciarContador() {
-            if (!intervalo) { 
-                intervalo = setInterval(contar, 1000); 
+            if (!intervalo) {
+                intervalo = setInterval(contar, 1000);
             }
         }
 
         function detenerContador() {
-            clearInterval(intervalo); 
-            intervalo = null; 
+            clearInterval(intervalo);
+            intervalo = null;
         }
 
         function revisarRespuestas() {
@@ -83,18 +92,19 @@
         }
 
         function reiniciarContador() {
-            detenerContador(); 
-            tiempo = 30; 
-            actualizarContador(); 
-        
+            detenerContador();
+            tiempo = 30;
+            actualizarContador();
+
             document.getElementById("p1").value = "";
             document.getElementById("p2").value = "";
             document.getElementById("p3").value = "";
             document.getElementById("p4").value = "";
             document.getElementById("p5").value = "";
 
-            iniciarContador(); 
+            iniciarContador();
         }
-     </script>
+    </script>
 </body>
+
 </html>
