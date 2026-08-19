@@ -1,0 +1,51 @@
+.calc-box {
+    border: 2px solid black;
+    border-radius: 3%;
+    width: 300px;
+    padding: 10px;
+    margin: 50px auto;
+    background-color: rgb(244, 219, 255);
+    text-align: center;
+    
+}
+
+h1 {
+    color: rgb(155, 99, 201);
+}
+
+h2 {
+    color: rgb(155, 99, 201);
+}
+
+input {
+    width: 90%;
+    margin: 5px;
+    padding: 5px;
+}
+
+.row {
+    margin: 10px 0;
+}
+
+button {
+    width: 40px;
+    height: 35px;
+    font-size: 18px;
+    margin: 2px;
+    background-color: rgb(200, 144, 223);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(171, 131, 209);
+}
+
+.text-buttons button {
+    width: 80px;
+    font-size: 12px;
+}
+
+.target-buttons button {
+    width: 60px;
+    background-color: rgb(153, 144, 238);
+}

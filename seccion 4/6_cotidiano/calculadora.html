@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuentaPollitos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calc-box">
+        <h1>Calculadora</h1>
+        
+        <input type="number" id="n1">
+        <input type="number" id="n2">
+
+        <h2>Resultado:</h2>
+        <input type="text" id="inputResultado" readonly>
+
+        <div class="row text-buttons target-buttons">
+            <button onclick="redondearCeil()">ceil</button>
+            <button onclick="redondearFloor()">floor</button>
+            <button onclick="redondearRound()">round</button>
+        </div>
+
+        <div class="row">
+            <button onclick="dividir()">/</button>
+            <button onclick="multiplicar()">x</button>
+            <button onclick="restar()">-</button>
+            <button onclick="sumar()">+</button>
+        </div>
+
+        <div class="row text-buttons">
+            <button onclick="aleatorio()">random</button>
+            <button onclick="absoluto()">absoluto</button>
+        </div>
+
+        <div class="row text-buttons">
+            <button onclick="potencia()">potencia</button>
+            <button onclick="raiz()">raiz</button>
+        </div>
+    </div>
+    
+    <script>
+        function colocarEnPantalla(num) {
+            document.getElementById('inputResultado').value = num;
+        }
+
+        function leerInputs() {
+            return {
+                num1: parseFloat(document.getElementById('n1').value) || 0,
+                num2: parseFloat(document.getElementById('n2').value) || 0
+            };
+        }
+
+        function leerPantalla() {
+            return parseFloat(document.getElementById('inputResultado').value) || 0;
+        }
+
+        function redondearCeil() {
+            const temp = leerPantalla();
+            colocarEnPantalla(Math.ceil(temp));
+        }
+
+        function redondearFloor() {
+            const temp = leerPantalla();
+            colocarEnPantalla(Math.floor(temp));
+        }
+
+        function redondearRound() {
+            const temp = leerPantalla();
+            colocarEnPantalla(Math.round(temp));
+        }
+
+        function aleatorio() {
+            const calculo = Math.random();
+            colocarEnPantalla(calculo);
+        }
+
+        function absoluto() {
+            const valores = leerInputs();
+            const calculo = Math.abs(valores.num1);
+            colocarEnPantalla(calculo);
+        }
+
+        function potencia() {
+            const valores = leerInputs();
+            const calculo = Math.pow(valores.num1, valores.num2);
+            colocarEnPantalla(calculo);
+        }
+
+        function raiz() {
+            const valores = leerInputs();
+            const calculo = valores.num1 >= 0 ? Math.sqrt(valores.num1) : "Error";
+            colocarEnPantalla(calculo);
+        }
+
+        function dividir() {
+            const valores = leerInputs();
+            const calculo = valores.num2 !== 0 ? valores.num1 / valores.num2 : "Error";
+            colocarEnPantalla(calculo);
+        }
+
+        function multiplicar() {
+            const valores = leerInputs();
+            const calculo = valores.num1 * valores.num2;
+            colocarEnPantalla(calculo);
+        }
+
+        function restar() {
+            const valores = leerInputs();
+            const calculo = valores.num1 - valores.num2;
+            colocarEnPantalla(calculo);
+        }
+
+        function sumar() {
+            const valores = leerInputs();
+            const calculo = valores.num1 + valores.num2;
+            colocarEnPantalla(calculo);
+        }
+    </script>
+    
+</body>
+</html>
