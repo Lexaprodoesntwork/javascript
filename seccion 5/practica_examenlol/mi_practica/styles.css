@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+    background-color: aliceblue;
+    margin-top: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input, select, button {
+    display: block;
+    margin: 20px auto;
+    padding: 5px;
+    border: border gray;
+    border-radius: 8px;
+}
+
+button {
+    background-color: rgb(196, 197, 255);
+    cursor: pointer;
+}
+
+#resultado {
+    font-weight: bold;
+    font-family: fantasy;
+    font-size: 25px;
+    margin-top: 20px;
+}

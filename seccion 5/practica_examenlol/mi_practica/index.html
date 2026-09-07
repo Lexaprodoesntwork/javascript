@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendador de películas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    
+    <div>
+        <h1>Recomendador de películas</h1>
+        
+        <input type="number" id="edad" placeholder="Escribe tu edad">
+
+        <select id="genero">
+        <option value="Drama">Drama</option>
+        <option value="Comedia">Comedia</option>
+        <option value="Musical">Musical</option>
+        <option value="Crimen">Crimen</option>
+        </select>
+        <button onclick="recomendarPelicula()">Recomendar</button>
+
+        <h2>Peli recomendada:</h2>
+        <p id="resultado"></p>
+    </div>
+</body>
+</html>
