@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loop</title>
+    </head>
+    <body>
+        <input type="number" id="numeroInput">
+        <button onclick="obtenerNumero()">ejecutar</button>
+        <div id="resultado"></div>
+
+        <script>
+            function testLoop(numero) {
+                let contenedor = document.getElementById("resultado");
+                contenedor.innerHTML = ""; 
+
+                for (let i = 1; i <= 10; i++) {
+                    contenedor.innerHTML += numero + " x " + i + " = " + (numero * i) + "<br>";
+                }
+            }
+
+            function obtenerNumero() {
+                let valor = document.getElementById("numeroInput").value;
+                testLoop(Number(valor));
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Do while practica</title>
+</head>
+
+<body>
+    <script>
+        function testLoop(vueltasTotales) {
+            let contador = 1;
+            do {
+                document.write("<p>Vuelta número: " + contador + "</p>");
+                contador++;
+            } while (contador <= vueltasTotales);
+        }
+
+        let numeroVueltas = parseInt(prompt("¿Cuántas vueltas quieres dar?"));
+        testLoop(numeroVueltas);
+    </script>
+</body>
+
+</html>

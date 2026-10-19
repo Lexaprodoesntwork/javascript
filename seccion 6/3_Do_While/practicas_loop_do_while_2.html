@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tabla</title>
+</head>
+
+<body>
+    <script>
+        function mostrarTabla(numero) {
+            let multiplicador = 1;
+            do {
+                let resultado = numero * multiplicador;
+                console.log(numero + " x " + multiplicador + " = " + resultado);
+                multiplicador++;
+            } while (multiplicador <= 10);
+        }
+
+        let numero = parseInt(prompt("Ingresa un número:"));
+        mostrarTabla(numero);
+    </script>
+</body>
+
+</html>
